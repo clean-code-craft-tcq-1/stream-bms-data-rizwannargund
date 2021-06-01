@@ -33,4 +33,4 @@ Streaming is started in csv format(stateofcharge,temperature). Press Ctrl+C to e
 Streaming stop event is triggered
 
 
-## Note: It starts printing from 1st reading once it reaches last reading from csv. User can stop the printing with Ctrl+C.
+#### Note: It starts printing from 1st reading once it reaches last reading from csv. User can stop the printing with Ctrl+C.
