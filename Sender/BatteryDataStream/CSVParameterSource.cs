@@ -7,6 +7,8 @@ namespace BatteryDataStream
     {
         private string _lines;
 
+        public int MaxRows { get; set; }
+
         public string LoadParameters(string filePath)
         {
             if (File.Exists(filePath))
@@ -14,6 +16,7 @@ namespace BatteryDataStream
                 using (var reader = new StreamReader(filePath))
                 {
                     _lines = reader.ReadToEnd();
+                    MaxRows = _lines.Split("\n").Length - 2;
                     return _lines;
                 }
             }

@@ -63,6 +63,19 @@ namespace BatteryDataStream.Test
             Assert.Throws<Exception>(() => parameterProvider.LoadParameters(""));
         }
 
+        [Fact]
+        public void LoadCSVParameter_ParameterSource_SetMaxRows()
+        {
+            //Arrange
+            ParameterProvider parameterProvider = new ParameterProvider(parameterSource);
+
+            //Act
+            parameterProvider.LoadParameters(filePath);
+
+            //Assert
+            Assert.True(parameterSource.MaxRows == 15);
+        }
+
         private bool IsFloat(string parameters, int index)
         {
             return (float.TryParse(parameters.Split("\n")[index].Split(',')[0].Trim('\r'), out float _soc) &&

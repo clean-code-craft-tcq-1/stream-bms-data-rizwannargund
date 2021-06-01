@@ -6,6 +6,8 @@ namespace BatteryDataStream
 {
     public class FakeCSVParameterSource : IParameterSource
     {
+        public int MaxRows { get; set; }
+
         public string GetParameter(int index)
         {
             return "10,20\n15,25";

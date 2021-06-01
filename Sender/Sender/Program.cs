@@ -11,13 +11,15 @@ namespace Sender
         private static DataStreaming _batteryDataStream;
         private static string _filePath = Directory.GetParent("../../../../") + @"/BatteryDataStream/Data/Parameters.csv";
         private static int _counter = 1;
+        private static CSVParameterSource _csvParameterSource;
 
         static void Main(string[] args)
         {
-            _batteryDataStream = new DataStreaming(new CSVParameterSource());
+            _csvParameterSource = new CSVParameterSource();
+            _batteryDataStream = new DataStreaming(_csvParameterSource);
             _batteryDataStream.Load(_filePath);
 
-            Console.WriteLine("Streaming is started in csv format(stateofcharge,temperature). Press Ctrl-C to end");
+            Console.WriteLine("Streaming is started in csv format(stateofcharge,temperature). Press Ctrl+C to end");
             Console.CancelKeyPress += (sender, eventArgs) =>
             {
                 Console.WriteLine("Streaming stop event is triggered");
@@ -32,7 +34,7 @@ namespace Sender
         {
             while (!cancellationToken.IsCancellationRequested)
             {
-                if (_counter == 14)
+                if (_counter == _csvParameterSource.MaxRows)
                     _counter = 1;
                 Console.WriteLine(_batteryDataStream.Start(_counter));
                 Thread.Sleep(1000);

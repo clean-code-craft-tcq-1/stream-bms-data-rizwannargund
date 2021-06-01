@@ -41,6 +41,14 @@ namespace BatteryDataStream.Test
             Assert.Throws<ArgumentNullException>(() => new DataStreaming(null));
         }
 
+        [Fact]
+        public void StartDataStreaming_SetMaxRows()
+        {
+            parameterSource.MaxRows = 15;
+            //Assert
+            Assert.True(parameterSource.MaxRows == 15);
+        }
+
         private bool IsFloat(string parameters, int index)
         {
             return (float.TryParse(parameters.Split("\n")[index].Split(',')[0].Trim('\r'), out float _soc) &&
