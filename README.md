@@ -72,3 +72,8 @@ This section lists the minimum functionality of the Sender and Receiver.
 ## Quality Parameters
 
 Setup the quality parameters of your project (duplication, complexity, coverage, warnings) using the GitHub workflow yml files.
+![2021-06-21_21h36_09](https://user-images.githubusercontent.com/77484841/122793534-f3cd0280-d2d8-11eb-8c84-536655d8c90e.png)
+![2021-06-21_21h36_09](https://user-images.githubusercontent.com/77484841/122793574-fdef0100-d2d8-11eb-8b5b-9b52409e87d3.png)
+
+
+
