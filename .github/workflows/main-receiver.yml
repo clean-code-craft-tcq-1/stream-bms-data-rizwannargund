@@ -25,4 +25,5 @@ jobs:
     - name: Build and Test
       run: mvn -f pom.xml test
     - name: Build and main class
-      run: mvn -f ./pom.xml compile exec:java -Dexec.mainClass="batterystreamreceiver.ReceiverServiceImpl"
+      run: mvn -f ./pom.xml compile exec:java -Dexec.mainClass="batterystreamreceiver.ReceiverServiceImpl" -Dexec.args="stateofcharge,temperature 10,20 12,23 14,26 18,25 11,29 20,32 26,35 29,39 17,28"
+
