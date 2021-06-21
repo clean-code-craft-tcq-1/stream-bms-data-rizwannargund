@@ -32,5 +32,4 @@ jobs:
       with: java-version: 1.8
       run: javac src/main/java/batterystreamreceiver/ReceiverServiceImpl.java
     - name: run
-      run: dotnet run --project Sender\Sender\Sender.csproj | java -ea -classpath . src.main.java.batterystreamreceiver.ReceiverServiceImpl.java
-	 
+      run: dotnet run --project Sender\Sender\Sender.csproj | java -ea -classpath . src.main.java.batterystreamreceiver.ReceiverServiceImpl.java	 
