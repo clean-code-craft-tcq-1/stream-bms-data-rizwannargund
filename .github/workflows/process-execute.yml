@@ -23,5 +23,5 @@ jobs:
     # start the streaming of data 
     - name: Execute process
       shell: cmd
-      timeout-minutes: 1
+      timeout-minutes: 10
       run: call executeDataStreams.bat
