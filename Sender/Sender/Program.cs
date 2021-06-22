@@ -9,7 +9,7 @@ namespace Sender
     {
         private static readonly CancellationTokenSource cancellationToken = new CancellationTokenSource();
         private static DataStreaming _batteryDataStream;
-        private static string _filePath = Directory.GetParent("../../../../") + @"/BatteryDataStream/Data/Parameters.csv";
+        private static string _filePath = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\..\..\", @"BatteryDataStream/Data/Parameters.csv"));
         private static int _counter = 1;
         private static CSVParameterSource _csvParameterSource;
 
