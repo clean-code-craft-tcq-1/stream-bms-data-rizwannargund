@@ -73,7 +73,7 @@ namespace BatteryDataStream.Test
             parameterProvider.LoadParameters(filePath);
 
             //Assert
-            Assert.True(parameterSource.MaxRows == 15);
+            Assert.True(parameterSource.MaxRows > 1);
         }
 
         private bool IsFloat(string parameters, int index)
